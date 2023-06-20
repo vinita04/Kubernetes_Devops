@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Node App</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    tr:hover {background-color: coral;}
+    </style>
+</head>
+<body>
+    <div class="table-data">
+<h2>Employee Data</h2>
+    <table border="1">
+        <tr>
+            <th>Emp No</th>
+            <th>Full Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Department</th>
+        </tr>
+        
+        <%
+        if(empData.length!=0){
+        var i=1;
+        empData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=data.Emp_No %></td>
+            <td><%=data.Emp_Name %></td>
+            <td><%=data.Emp_Add %></td>
+            <td><%=data.Emp_Phone %></td>
+            <td><%=data.Dept_Name %></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>
